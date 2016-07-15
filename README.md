@@ -14,6 +14,7 @@ Clone the project i.e. in ~/projects/desktrack/
 and then in your .xinitrc add this lines
 
 `cd ~/projects/desktrack/`
+
 `bash start.sh &`
 
 Next time you restart your X server it will start tracking data.

@@ -37,6 +37,6 @@ while true do
   other_windows.delete(desktop.focused_window)
   windows = [desktop.focused_window] + other_windows
   `mkdir -p ~/data`
-  `echo "$(date +'%D'),$(date +'%T'),#{windows.join(',')}" >> ~/data/deskspy.csv`
+  `echo "$(date +'%D'),$(date +'%T'),#{windows.join(',')}" >> ~/data/desktrack.csv`
   sleep 15
 end

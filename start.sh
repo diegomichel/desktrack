@@ -3,5 +3,5 @@ if ps aux|grep "ruby loop.rb"|egrep -v "grep" > /dev/null
 then
   echo "Running"
 else
-  ruby loop.rb &
+  ruby loop.rb
 fi

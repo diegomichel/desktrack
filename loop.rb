@@ -28,14 +28,15 @@ class Desktop
   end
   def focused_window
     name = `xprop -id $(xprop -root _NET_ACTIVE_WINDOW | cut -d ' ' -f 5) _NET_WM_NAME`
-    clean_name(name)
+    clean_name(name) if name
   end
 end
 while true do
   desktop = Desktop.new
   other_windows = desktop.open_windows
-  other_windows.delete(desktop.focused_window)
-  windows = [desktop.focused_window] + other_windows
+  focused_window = desktop.focused_window
+  other_windows.delete(focused_window)
+  windows = [focused_window] + other_windows
   `mkdir -p ~/data`
   `echo "$(date +'%D'),$(date +'%T'),#{windows.join(',')}" >> ~/data/desktrack.csv`
   sleep 15
